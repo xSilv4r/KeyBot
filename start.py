@@ -16,9 +16,9 @@ def config_generation():
     f.write("ports = {}\n".format(l))
     l = input("%s[-]%s Enter rate:\n"%(fg_colors.blue,fg_colors.reset))
     f.write("rate = {}\n".format(l))
-    f.write("output-format = json\n")
+    f.write("output-format = xml\n")
     l = input("%s[-]%s Enter output-filename (output will be in json format):\n"%(fg_colors.blue,fg_colors.reset))
-    f.write("output-filename = {}.json\n".format(RECON_PATH/l))
+    f.write("output-filename = {}.xml\n".format(RECON_PATH/l))
     f.close()
     return file_name
 
