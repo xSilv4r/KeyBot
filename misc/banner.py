@@ -1,5 +1,7 @@
+from lib.data import fg_colors
+
 def banner():
-    print('''
+    print('''%s
  | |/ /         |  _ \      | |  
  | ' / ___ _   _| |_) | ___ | |_ 
  |  < / _ \ | | |  _ < / _ \| __|
@@ -8,5 +10,6 @@ def banner():
             __/ |                
            |___/                 
 
-''')
-    print("authors: Shady, Aziz.\n\n")
+%s'''%(fg_colors.green,fg_colors.reset))
+    
+    print("# Authors: %sShady, Aziz%s.\n"%(fg_colors.lightcyan,fg_colors.reset))
