@@ -6,7 +6,7 @@ from lib.data import *
 from misc.banner import banner
 from lib.data import fg_colors
 
-def configGeneration():
+def config_generation():
     file_name = CONF_PATH/input("%s[-]%s Enter configuration filename:\n"%(fg_colors.blue,fg_colors.reset))
     f = open("{}.conf".format(file_name), "w")
     print(file_name)
@@ -22,16 +22,16 @@ def configGeneration():
     f.close()
     return file_name
 
-def portScanner():
-    file_name=configGeneration()
+def port_scanner():
+    file_name=config_generation()
     cmd="masscan -c "
     cmd+="{}".format(file_name)
     cmd+=".conf --banners"
     os.system(cmd)
+    print("Port scan done.")
 
 
 if __name__ == "__main__":
     banner()
     print("%sStarting KeyBot at {}%s\n".format(ctime())%(fg_colors.red,fg_colors.reset))
-    portScanner()
-    print("finished scan")
+    port_scanner()
