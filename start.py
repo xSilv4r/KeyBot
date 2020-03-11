@@ -3,35 +3,50 @@ from time import ctime
 import os
 
 from lib.data import *
+from lib.recon import version_detection
 from misc.banner import banner
 from lib.data import fg_colors
 
 def config_generation():
-    file_name = CONF_PATH/input("%s[-]%s Enter configuration filename:\n"%(fg_colors.blue,fg_colors.reset))
-    f = open("{}.conf".format(file_name), "w")
-    print(file_name)
+    config_filename = CONF_PATH/input("%s[-]%s Enter configuration filename:\n"%(fg_colors.blue,fg_colors.reset))
+    f = open("{}.conf".format(config_filename), "w")
+    print(config_filename)
     l = input("%s[-]%s Enter ip/range:\n"%(fg_colors.blue,fg_colors.reset))
     f.write("range = {}\n".format(l))
     l = input("%s[-]%s Enter port/range:\n"%(fg_colors.blue,fg_colors.reset))
     f.write("ports = {}\n".format(l))
     l = input("%s[-]%s Enter rate:\n"%(fg_colors.blue,fg_colors.reset))
     f.write("rate = {}\n".format(l))
-    f.write("output-format = xml\n")
+    f.write("output-format = json\n")
     l = input("%s[-]%s Enter output-filename (output will be in json format):\n"%(fg_colors.blue,fg_colors.reset))
-    f.write("output-filename = {}.xml\n".format(RECON_PATH/l))
+    output_filename = RECON_PATH/l
+    f.write("output-filename = {}.json\n".format(output_filename))
     f.close()
-    return file_name
+    return config_filename,output_filename
 
 def port_scanner():
-    file_name=config_generation()
+    config_filename,output_filename=config_generation()
     cmd="masscan -c "
-    cmd+="{}".format(file_name)
+    cmd+="{}".format(config_filename)
     cmd+=".conf --banners"
     os.system(cmd)
-    print("Port scan done.")
+    print("%s[+]%s Port scanning done."%(fg_colors.lightgreen,fg_colors.reset))
+    version_detection(output_filename)
 
-
+def menu():
+    print("%sStarting KeyBot at {}%s\n".format(ctime())%(fg_colors.red,fg_colors.reset))
+    print('''%sMenu :%s
+%s[1]%s Scan from existing configuration.
+%s[2]%s Create new configuration.'''%(fg_colors.green,fg_colors.reset,
+                                      fg_colors.blue,fg_colors.reset,
+                                      fg_colors.blue,fg_colors.reset,))
+    choice = input()
+    if choice == '1':
+        config_filename = input("%s[-]%sEnter configuration filename\n"%(fg_colors.blue,fg_colors.reset))
+        print("still in dev")
+    if choice == '2':
+        port_scanner()
+        
 if __name__ == "__main__":
     banner()
-    print("%sStarting KeyBot at {}%s\n".format(ctime())%(fg_colors.red,fg_colors.reset))
-    port_scanner()
+    menu()
