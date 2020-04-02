@@ -24,8 +24,7 @@ def config_generation():
     f.close()
     return config_filename,output_filename
 
-def port_scanner():
-    config_filename,output_filename=config_generation()
+def port_scanner(config_filename,output_filename):
     cmd="masscan -c "
     cmd+="{}".format(config_filename)
     cmd+=".conf --banners"
@@ -42,10 +41,17 @@ def menu():
                                       fg_colors.blue,fg_colors.reset,))
     choice = input()
     if choice == '1':
-        config_filename = input("%s[-]%sEnter configuration filename\n"%(fg_colors.blue,fg_colors.reset))
-        print("still in dev")
+        config_filename = CONF_PATH/input("%s[-]%sEnter configuration filename\n"%(fg_colors.blue,fg_colors.reset))
+        with open('{}.conf'.format(config_filename), 'r') as f:
+            for line in f:
+                if line.find("output/recon_output/") != -1:
+                    x = line.rpartition('/')
+                    output_filename = RECON_PATH/x[2].strip()
+        port_scanner(config_filename,output_filename)
     if choice == '2':
-        port_scanner()
+        config_filename,output_filename=config_generation()
+        port_scanner(config_filename,output_filename)
+
         
 if __name__ == "__main__":
     banner()

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.80 scan initiated Wed Apr  1 19:31:12 2020 as: nmap -sV -p 23,80,21,22, -&#45;open -Pn -n -T4 -oX output/recon_output/192.168.1.1 192.168.1.1 -->
+<nmaprun scanner="nmap" args="nmap -sV -p 23,80,21,22, -&#45;open -Pn -n -T4 -oX output/recon_output/192.168.1.1 192.168.1.1" start="1585762272" startstr="Wed Apr  1 19:31:12 2020" version="7.80" xmloutputversion="1.04">
+<scaninfo type="syn" protocol="tcp" numservices="4" services="21-23,80"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1585762273" endtime="1585762276"><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.1.1" addrtype="ipv4"/>
+<address addr="D8:B6:B7:94:E9:37" addrtype="mac" vendor="Comtrend"/>
+<hostnames>
+</hostnames>
+<ports><extraports state="filtered" count="1">
+<extrareasons reason="no-response" count="1"/>
+</extraports>
+<port protocol="tcp" portid="21"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="ftp" product="D-Link/Comtrend DSL modem ftp firmware update" method="probed" conf="10"/></port>
+<port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="ssh" product="Dropbear sshd" version="0.46" extrainfo="protocol 2.0" ostype="Linux" method="probed" conf="10"><cpe>cpe:/a:matt_johnston:dropbear_ssh_server:0.46</cpe><cpe>cpe:/o:linux:linux_kernel</cpe></service></port>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="tcpwrapped" method="probed" conf="8"/></port>
+</ports>
+<times srtt="6250" rttvar="5603" to="100000"/>
+</host>
+<runstats><finished time="1585762276" timestr="Wed Apr  1 19:31:16 2020" elapsed="3.87" summary="Nmap done at Wed Apr  1 19:31:16 2020; 1 IP address (1 host up) scanned in 3.87 seconds" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>
