@@ -9,7 +9,6 @@ def banner():
  |_|\_\___|\__, |____/ \___/ \__|
             __/ |                
            |___/                 
-
 %s'''%(fg_colors.green,fg_colors.reset))
     
     print("# Authors: %sShady, Aziz%s.\n"%(fg_colors.lightcyan,fg_colors.reset))
