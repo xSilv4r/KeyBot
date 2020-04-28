@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
 from time import ctime
-import os
+import subprocess
+import glob
 
 from lib.data import *
 from lib.recon import version_detection
+from lib.nmap_parser import get_targets
+from lib.loader import loadModule, loadPayloads
+from lib.pocengine import run
 from misc.banner import banner
 from lib.data import fg_colors
 
@@ -25,12 +29,17 @@ def config_generation():
     return config_filename,output_filename
 
 def port_scanner(config_filename,output_filename):
-    cmd="masscan -c "
-    cmd+="{}".format(config_filename)
-    cmd+=".conf --banners"
-    os.system(cmd)
+    print("[!] Starting port scan.")
+    subprocess.run(["masscan","-c","{}.conf".format(config_filename)], stdout=subprocess.DEVNULL)
     print("%s[+]%s Port scanning done."%(fg_colors.lightgreen,fg_colors.reset))
+    print("[!] Starting port probing.")
     version_detection(output_filename)
+    print("[+] Port probing done.")
+    files = [f for f in glob.glob("./output/recon_output/*")]
+    for f in files:
+        targets = get_targets(f)
+        loadPayloads(targets)
+        run()    
 
 def menu():
     print("%sStarting KeyBot at {}%s\n".format(ctime())%(fg_colors.red,fg_colors.reset))

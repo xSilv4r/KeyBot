@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python3
 import os
 import json
@@ -84,16 +83,4 @@ def version_detection(output_filename):
         print('Running scans: '+str(running_scans))
     # Sleep for awhile so as not to waste too much system resources rechecking.
         time.sleep(sleep_seconds)
-
-    print("%s[+]%s Version detection done."%(fg_colors.lightgreen,fg_colors.reset))
-    #cmd="rm {}.json".format(output_filename)
-def nmap(ip,open_ports):
-    cmd="nmap -sVC " #version detection
-    cmd+=str(ip)
-    cmd+=" -p {}".format(open_ports)
-    cmd+=" --open" #show only open ports
-    cmd+=" -Pn" #skip host discovery
-    cmd+=" -n" #no dns resolution
-    cmd+=" -T4" #timing template
-    cmd+=" -oX {}".format(RECON_PATH/ip) #output file
-    os.system(cmd)
+    os.system("rm {}.json".format(output_filename))

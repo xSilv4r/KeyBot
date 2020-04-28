@@ -1,10 +1,17 @@
 #!/usr/bin/env python3
 from pathlib import Path
+from lib.datatype import AttribDict
 
 #PATHS
 POCS_PATH = Path("./pocs/")
 CONF_PATH = Path("./configurations/")
 RECON_PATH = Path("./output/recon_output/")
+
+conf = AttribDict()
+
+th = AttribDict()
+
+poc_array = []
 
 #COLORS
 class fg_colors:
