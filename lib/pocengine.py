@@ -71,8 +71,8 @@ def resultHandler(status, payload):
     elif status is True:
         msg = payload
     else:
-        msg = str(status)
-    changeFoundCount(1)
+        msg = "failed"
+    #changeFoundCount(1)
     if th.s_flag:
         print(msg)
 

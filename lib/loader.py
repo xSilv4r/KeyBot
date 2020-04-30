@@ -2,8 +2,12 @@
 import sys
 import os
 import queue
-from lib.data import th,poc_array
+import glob
+
+from lib.data import th,poc_array,targets
 from lib.classification import get_pocfile
+from lib.nmap_parser import get_targets
+
 
 def loadModule(pocfile):
     if pocfile:
@@ -25,9 +29,18 @@ def loadModule(pocfile):
     else:
         return None
 
+def loadTargets():
+    files = [f for f in glob.glob("./output/recon_output/*")]
+    print("[!] Loading targets")
+    for f in files:
+        tgs = get_targets(f)
+        for target in tgs:
+            targets.append(target)
 
-def loadPayloads(targets):
-    print('Initialize targets...')
+    
+
+def loadPayloads():
+    print('[!] Initialize targets...')
     th.queue = queue.Queue()
     for item in targets:
         for k,v in item.items():
@@ -35,6 +48,6 @@ def loadPayloads(targets):
             module = loadModule(pocfile)
             if module:
                 th.queue.put(k)
-                print("target added: {}".format(k))
+                print("[+] target added: {}:{}".format(k,v))
 
-    print('Total targets: %s' % str(th.queue.qsize()))
+    print('[+] Total targets: %s' % str(th.queue.qsize()))

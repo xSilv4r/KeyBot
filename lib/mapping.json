@@ -1,5 +1,6 @@
 {
-    "ftp":"CVE2020",
+    "ftp":"CVE-WINDOWS",
     "lol":"CVE2019",
-    "telnet": "CVE-WINDOWS"
+    "telnet": "CVE-WINDOWS",
+    "ssh": "CVE-WINDOWS"
 }

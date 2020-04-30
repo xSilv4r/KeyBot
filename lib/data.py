@@ -13,6 +13,8 @@ th = AttribDict()
 
 poc_array = []
 
+targets = []
+
 #COLORS
 class fg_colors:
     reset='\033[0m'

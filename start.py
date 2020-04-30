@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 from time import ctime
 import subprocess
-import glob
 
 from lib.data import *
 from lib.recon import version_detection
 from lib.nmap_parser import get_targets
-from lib.loader import loadModule, loadPayloads
+from lib.loader import loadModule, loadPayloads, loadTargets
 from lib.pocengine import run
 from misc.banner import banner
 from lib.data import fg_colors
@@ -35,11 +34,10 @@ def port_scanner(config_filename,output_filename):
     print("[!] Starting port probing.")
     version_detection(output_filename)
     print("[+] Port probing done.")
-    files = [f for f in glob.glob("./output/recon_output/*")]
-    for f in files:
-        targets = get_targets(f)
-        loadPayloads(targets)
-        run()    
+    print("[!] Starting POC engine.")
+    loadTargets()
+    loadPayloads()
+    run()    
 
 def menu():
     print("%sStarting KeyBot at {}%s\n".format(ctime())%(fg_colors.red,fg_colors.reset))
