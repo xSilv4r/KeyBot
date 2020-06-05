@@ -70,12 +70,13 @@ def get_host_data(root):
                     script_output = ''
 
                 # Create a list of the port data
-                port_data.extend((service,product, version))
+                port_data.extend((service,product,version))
                 port_data = " ".join(port_data)
 
                 # Create an object of the ip/port data
                 desc = {}
                 desc[ip_address] = port_data.strip()
+                desc['port'] = port_id
 
                 # Add the port data to the host data
                 host_data.append(desc)

@@ -1,8 +1,10 @@
 import threading
 import time
 import traceback
+import json
 from lib.data import th,poc_array
 
+test = []
 
 def initEngine():
     th.thread_mode = False
@@ -26,14 +28,14 @@ def scan():
     while 1:
         if th.thread_mode: th.load_lock.acquire()
         if th.queue.qsize() > 0 and th.is_continue:
-            payload = str(th.queue.get(timeout=1.0))
+            payload = (th.queue.get(timeout=1.0))
             if th.thread_mode: th.load_lock.release()
         else:
             if th.thread_mode: th.load_lock.release()
             break
         try:
-            status = poc_array[0].poc(payload)
-            resultHandler(status, payload)
+            status = poc_array[0]['module'].poc(payload['ip_addr'])
+            resultHandler(status, payload, poc_array[0]['name'])
             del poc_array[0]
         except Exception:
             th.errmsg = traceback.format_exc()
@@ -61,20 +63,23 @@ def run():
         print(msg)
 
 
-def resultHandler(status, payload):
-    if not status:
-        return
+def resultHandler(status, payload, poc):
+    global test
+    # if not status:
+    #     return
     # elif status is POC_RESULT_STATUS.RETRAY:
     #     changeScanCount(-1)
     #     th.queue.put(payload)
     #     return
-    elif status is True:
-        msg = payload
-    else:
-        msg = "failed"
+    # elif status is True:
+    msg = payload
+    res = {"target":payload['ip_addr'],"port":payload['port'],"poc":str(poc),"exploit_status":str(status)}
+    test.append(res)
+    # else:
+    #     msg = "failed"
     #changeFoundCount(1)
-    if th.s_flag:
-        print(msg)
+    #if th.s_flag:
+        #print(msg)
 
 def setThreadLock():
     if th.thread_mode:
@@ -107,9 +112,12 @@ def changeThreadCount(num):
     if th.thread_mode: th.thread_count_lock.release()
 
 
-def output2file(msg):
-    if th.thread_mode: th.file_lock.acquire()
-    f = open(th.output, 'a')
-    f.write(msg + '\n')
-    f.close()
-    if th.thread_mode: th.file_lock.release()
+def output2file():
+    global test
+    with open('./output/final_output/data.json', 'w') as outfile:
+        json.dump(test, outfile)
+    # if th.thread_mode: th.file_lock.acquire()
+    # f = open(th.output, 'a')
+    # f.write(msg + '\n')
+    # f.close()
+    # if th.thread_mode: th.file_lock.release()

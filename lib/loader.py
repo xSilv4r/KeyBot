@@ -8,7 +8,6 @@ from lib.data import th,poc_array,targets
 from lib.classification import get_pocfile
 from lib.nmap_parser import get_targets
 
-
 def loadModule(pocfile):
     if pocfile:
         name="pocs.{}".format(pocfile)
@@ -24,7 +23,8 @@ def loadModule(pocfile):
         if not hasattr(module, 'poc'):
             print("Can't find essential method POC in current script Please modify your script/PoC.")
         else:
-            poc_array.append(module)
+            poc = {'module':module,'name':module.__name__}
+            poc_array.append(poc)
             return module
     else:
         return None
@@ -37,8 +37,6 @@ def loadTargets():
         for target in tgs:
             targets.append(target)
 
-    
-
 def loadPayloads():
     print('[!] Initialize targets...')
     th.queue = queue.Queue()
@@ -47,7 +45,8 @@ def loadPayloads():
             pocfile = get_pocfile(v)
             module = loadModule(pocfile)
             if module:
-                th.queue.put(k)
-                print("[+] target added: {}:{}".format(k,v))
+                target = {'ip_addr':k,'port':item['port']}
+                th.queue.put(target)
+                print("[+] target added: {}:{}, {}".format(k,item['port'],v))
 
     print('[+] Total targets: %s' % str(th.queue.qsize()))

@@ -4,16 +4,14 @@ import subprocess
 
 from lib.data import *
 from lib.recon import version_detection
-from lib.nmap_parser import get_targets
 from lib.loader import loadModule, loadPayloads, loadTargets
-from lib.pocengine import run
+from lib.pocengine import run, output2file
 from misc.banner import banner
 from lib.data import fg_colors
 
 def config_generation():
     config_filename = CONF_PATH/input("%s[-]%s Enter configuration filename:\n"%(fg_colors.blue,fg_colors.reset))
     f = open("{}.conf".format(config_filename), "w")
-    print(config_filename)
     l = input("%s[-]%s Enter ip/range:\n"%(fg_colors.blue,fg_colors.reset))
     f.write("range = {}\n".format(l))
     l = input("%s[-]%s Enter port/range:\n"%(fg_colors.blue,fg_colors.reset))
@@ -37,7 +35,9 @@ def port_scanner(config_filename,output_filename):
     print("[!] Starting POC engine.")
     loadTargets()
     loadPayloads()
-    run()    
+    run()
+    output2file()
+
 
 def menu():
     print("%sStarting KeyBot at {}%s\n".format(ctime())%(fg_colors.red,fg_colors.reset))
