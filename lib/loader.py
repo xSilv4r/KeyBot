@@ -3,8 +3,9 @@ import sys
 import os
 import queue
 import glob
+import json
 
-from lib.data import th,poc_array,targets
+from lib.data import th,poc_array,targets,results_data
 from lib.classification import get_pocfile
 from lib.nmap_parser import get_targets
 
@@ -34,19 +35,26 @@ def loadTargets():
     print("[!] Loading targets")
     for f in files:
         tgs = get_targets(f)
-        for target in tgs:
-            targets.append(target)
+        if tgs is not None:
+            for target in tgs:
+                targets.append(target)
 
 def loadPayloads():
     print('[!] Initialize targets...')
     th.queue = queue.Queue()
     for item in targets:
-        for k,v in item.items():
-            pocfile = get_pocfile(v)
-            module = loadModule(pocfile)
-            if module:
-                target = {'ip_addr':k,'port':item['port']}
-                th.queue.put(target)
-                print("[+] target added: {}:{}, {}".format(k,item['port'],v))
+        pocfile = get_pocfile(item['service'])
+        module = loadModule(pocfile)
+        if module:
+            target = {'ip_addr':item['ip'],'port':item['port'],'service':item['service']}
+            th.queue.put(target)
+            print("[+] target added: {}:{}, {}".format(item['ip'],item['port'],item['service']))
+        if not(module):
+            print("[!] Can't find PoCs for these targets but data will be saved...")
+            res = {"target":item['ip'],"port":item['port'],"service":item['service'],"poc":"none","exploit_status":False}
+            results_data.append(res)
+            with open('./output/final_output/data.json', 'w') as outfile:
+                json.dump(results_data, outfile)
+            print("Data saved : {}".format(res))
 
     print('[+] Total targets: %s' % str(th.queue.qsize()))

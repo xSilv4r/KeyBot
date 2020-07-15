@@ -1,6 +1,6 @@
 {
-    "ftp":"CVE-WINDOWS",
-    "lol":"CVE2019",
-    "telnet": "CVE-WINDOWS",
-    "ssh": "CVE-WINDOWS"
+    "shay":"CVE-WINDOWS",
+    "shay2":"CVE2019",
+    "shay3": "CVE-WINDOWS",
+    "shay4": "CVE-WINDOWS"
 }

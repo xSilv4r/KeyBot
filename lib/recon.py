@@ -72,12 +72,13 @@ def version_detection(output_filename):
             number_to_kickoff = max_concurrent_scans - running_scans
             if len(ip_array) > 0:
                 for startloop in range(0,number_to_kickoff):
-                    ip_address = ip_array[0]
-                    p = subprocess.Popen(["nmap", "-sV","-p",(ports_array)[0],
-                    "--open","-Pn","-n","-T4","-oX",(RECON_PATH/ip_array[0]),(ip_array)[0]],stdout=subprocess.PIPE)
-                    process_array.append(p)
-                    del ip_array[0]
-                    del ports_array[0]
+                    if len(ip_array) > 0:
+                        ip_address = ip_array[0]
+                        p = subprocess.Popen(["nmap", "-sV","-p",(ports_array)[0],
+                        "-open","-Pn","-n","-T4","-oX",(RECON_PATH/ip_array[0]),(ip_array)[0]],stdout=subprocess.PIPE)
+                        process_array.append(p)
+                        del ip_array[0]
+                        del ports_array[0]
         running_scans = get_running_processes()
         
         print('Running scans: '+str(running_scans))

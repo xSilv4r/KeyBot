@@ -36,7 +36,8 @@ def port_scanner(config_filename,output_filename):
     loadTargets()
     loadPayloads()
     run()
-    output2file()
+    #print("[+] Saving output.")
+    #output2file()
 
 
 def menu():

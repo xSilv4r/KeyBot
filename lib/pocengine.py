@@ -2,7 +2,7 @@ import threading
 import time
 import traceback
 import json
-from lib.data import th,poc_array
+from lib.data import th,poc_array,results_data
 
 test = []
 
@@ -73,8 +73,11 @@ def resultHandler(status, payload, poc):
     #     return
     # elif status is True:
     msg = payload
-    res = {"target":payload['ip_addr'],"port":payload['port'],"poc":str(poc),"exploit_status":str(status)}
-    test.append(res)
+    res = {"target":payload['ip_addr'],"port":payload['port'],"service":payload['service'],"poc":str(poc),"exploit_status":str(status)}
+    results_data.append(res)
+    with open('./output/final_output/data.json', 'w') as outfile:
+        json.dump(results_data, outfile)
+    print("Data saved : {}".format(res))
     # else:
     #     msg = "failed"
     #changeFoundCount(1)

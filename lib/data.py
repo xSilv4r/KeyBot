@@ -15,6 +15,8 @@ poc_array = []
 
 targets = []
 
+results_data = []
+
 #COLORS
 class fg_colors:
     reset='\033[0m'

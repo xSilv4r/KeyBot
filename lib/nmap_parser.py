@@ -75,7 +75,8 @@ def get_host_data(root):
 
                 # Create an object of the ip/port data
                 desc = {}
-                desc[ip_address] = port_data.strip()
+                desc["ip"] = ip_address
+                desc["service"] = port_data.strip()
                 desc['port'] = port_id
 
                 # Add the port data to the host data
@@ -97,7 +98,7 @@ def parse_xml(filename):
     except Exception as error:
         print("[-] A an error occurred. The XML may not be well formed. "
               "Please review the error and try again: {}".format(error))
-        exit()
+        return
     root = tree.getroot()
     scan_data = get_host_data(root)
     return scan_data 
