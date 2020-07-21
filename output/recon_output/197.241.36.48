@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.80 scan initiated Mon Jul 20 14:46:55 2020 as: nmap -sV -p 443,80, -open -Pn -n -T4 -oX output/recon_output/197.241.36.48 197.241.36.48 -->
+<nmaprun scanner="nmap" args="nmap -sV -p 443,80, -open -Pn -n -T4 -oX output/recon_output/197.241.36.48 197.241.36.48" start="1595249215" startstr="Mon Jul 20 14:46:55 2020" version="7.80" xmloutputversion="1.04">
+<scaninfo type="syn" protocol="tcp" numservices="2" services="80,443"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1595249216" endtime="1595249234"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="197.241.36.48" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="46"/><service name="http" product="Apache httpd" hostname="ra.gouvca.dj" method="probed" conf="10"><cpe>cpe:/a:apache:http_server</cpe></service></port>
+<port protocol="tcp" portid="443"><state state="open" reason="syn-ack" reason_ttl="46"/><service name="http" product="Apache httpd" extrainfo="JSP/2.3" tunnel="ssl" method="probed" conf="10"><cpe>cpe:/a:apache:http_server</cpe></service></port>
+</ports>
+<times srtt="127227" rttvar="95521" to="509311"/>
+</host>
+<runstats><finished time="1595249234" timestr="Mon Jul 20 14:47:14 2020" elapsed="18.97" summary="Nmap done at Mon Jul 20 14:47:14 2020; 1 IP address (1 host up) scanned in 18.97 seconds" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

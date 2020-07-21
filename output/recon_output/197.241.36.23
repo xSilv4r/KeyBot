@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.80 scan initiated Mon Jul 20 14:50:46 2020 as: nmap -sV -p 3389, -open -Pn -n -T4 -oX output/recon_output/197.241.36.23 197.241.36.23 -->
+<nmaprun scanner="nmap" args="nmap -sV -p 3389, -open -Pn -n -T4 -oX output/recon_output/197.241.36.23 197.241.36.23" start="1595249446" startstr="Mon Jul 20 14:50:46 2020" version="7.80" xmloutputversion="1.04">
+<scaninfo type="syn" protocol="tcp" numservices="1" services="3389"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1595249446" endtime="1595249527"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="197.241.36.23" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="3389"><state state="open" reason="syn-ack" reason_ttl="110"/><service name="ms-wbt-server" tunnel="ssl" method="table" conf="3"/></port>
+</ports>
+<times srtt="193692" rttvar="193692" to="968460"/>
+</host>
+<runstats><finished time="1595249527" timestr="Mon Jul 20 14:52:07 2020" elapsed="81.56" summary="Nmap done at Mon Jul 20 14:52:07 2020; 1 IP address (1 host up) scanned in 81.56 seconds" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

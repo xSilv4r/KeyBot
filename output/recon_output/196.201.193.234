@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.80 scan initiated Tue Jul 21 01:11:52 2020 as: nmap -sV -p 22, -open -Pn -n -T4 -oX output/recon_output/196.201.193.234 196.201.193.234 -->
+<nmaprun scanner="nmap" args="nmap -sV -p 22, -open -Pn -n -T4 -oX output/recon_output/196.201.193.234 196.201.193.234" start="1595286712" startstr="Tue Jul 21 01:11:52 2020" version="7.80" xmloutputversion="1.04">
+<scaninfo type="syn" protocol="tcp" numservices="1" services="22"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1595286712" endtime="1595286729"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="196.201.193.234" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="241"/><service name="ssh" product="Cisco SSH" version="1.25" extrainfo="protocol 1.99" ostype="IOS" method="probed" conf="10"><cpe>cpe:/a:cisco:ssh:1.25</cpe><cpe>cpe:/o:cisco:ios</cpe></service></port>
+</ports>
+<times srtt="122367" rttvar="122367" to="611835"/>
+</host>
+<runstats><finished time="1595286729" timestr="Tue Jul 21 01:12:09 2020" elapsed="17.30" summary="Nmap done at Tue Jul 21 01:12:09 2020; 1 IP address (1 host up) scanned in 17.30 seconds" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

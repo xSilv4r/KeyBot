@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.80 scan initiated Tue Jul 21 01:13:32 2020 as: nmap -sV -p 25,25, -open -Pn -n -T4 -oX output/recon_output/196.201.196.35 196.201.196.35 -->
+<nmaprun scanner="nmap" args="nmap -sV -p 25,25, -open -Pn -n -T4 -oX output/recon_output/196.201.196.35 196.201.196.35" start="1595286812" startstr="Tue Jul 21 01:13:32 2020" version="7.80" xmloutputversion="1.04">
+<scaninfo type="syn" protocol="tcp" numservices="1" services="25"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1595286812" endtime="1595286832"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="196.201.196.35" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="25"><state state="open" reason="syn-ack" reason_ttl="51"/><service name="smtp" product="Postfix smtpd" hostname="ESMTP" method="probed" conf="10"><cpe>cpe:/a:postfix:postfix</cpe></service></port>
+</ports>
+<times srtt="122062" rttvar="122062" to="610310"/>
+</host>
+<runstats><finished time="1595286832" timestr="Tue Jul 21 01:13:52 2020" elapsed="19.64" summary="Nmap done at Tue Jul 21 01:13:52 2020; 1 IP address (1 host up) scanned in 19.64 seconds" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

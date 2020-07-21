@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.80 scan initiated Tue Jul 21 00:59:31 2020 as: nmap -sV -p 80, -open -Pn -n -T4 -oX output/recon_output/196.201.196.45 196.201.196.45 -->
+<nmaprun scanner="nmap" args="nmap -sV -p 80, -open -Pn -n -T4 -oX output/recon_output/196.201.196.45 196.201.196.45" start="1595285971" startstr="Tue Jul 21 00:59:31 2020" version="7.80" xmloutputversion="1.04">
+<scaninfo type="syn" protocol="tcp" numservices="1" services="80"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1595285972" endtime="1595285988"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="196.201.196.45" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="51"/><service name="http" product="Apache httpd" version="2.4.7" extrainfo="(Ubuntu)" method="probed" conf="10"><cpe>cpe:/a:apache:http_server:2.4.7</cpe></service></port>
+</ports>
+<times srtt="176319" rttvar="176319" to="881595"/>
+</host>
+<runstats><finished time="1595285988" timestr="Tue Jul 21 00:59:48 2020" elapsed="17.11" summary="Nmap done at Tue Jul 21 00:59:48 2020; 1 IP address (1 host up) scanned in 17.11 seconds" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

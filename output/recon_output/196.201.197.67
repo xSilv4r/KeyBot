@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.80 scan initiated Tue Jul 21 18:25:02 2020 as: nmap -sV -p 53,21,111,25, -open -Pn -n -T4 -oX output/recon_output/196.201.197.67 196.201.197.67 -->
+<nmaprun scanner="nmap" args="nmap -sV -p 53,21,111,25, -open -Pn -n -T4 -oX output/recon_output/196.201.197.67 196.201.197.67" start="1595348702" startstr="Tue Jul 21 18:25:02 2020" version="7.80" xmloutputversion="1.04">
+<scaninfo type="syn" protocol="tcp" numservices="4" services="21,25,53,111"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1595348702" endtime="1595348709"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="196.201.197.67" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="21"><state state="open" reason="syn-ack" reason_ttl="49"/><service name="ftp" product="ProFTPD" version="1.3.4a" ostype="Unix" method="probed" conf="10"><cpe>cpe:/a:proftpd:proftpd:1.3.4a</cpe></service></port>
+<port protocol="tcp" portid="25"><state state="open" reason="syn-ack" reason_ttl="49"/><service name="smtp" product="Postfix smtpd" hostname=" debian" method="probed" conf="10"><cpe>cpe:/a:postfix:postfix</cpe></service></port>
+<port protocol="tcp" portid="53"><state state="open" reason="syn-ack" reason_ttl="49"/><service name="domain" product="ISC BIND" version="9.8.4-rpz2+rl005.12-P1" method="probed" conf="10"><cpe>cpe:/a:isc:bind:9.8.4-rpz2%2Brl005.12-p1</cpe></service></port>
+<port protocol="tcp" portid="111"><state state="open" reason="syn-ack" reason_ttl="49"/><service name="rpcbind" version="2-4" extrainfo="RPC #100000" method="probed" conf="10"/></port>
+</ports>
+<times srtt="121383" rttvar="51653" to="327995"/>
+</host>
+<runstats><finished time="1595348709" timestr="Tue Jul 21 18:25:09 2020" elapsed="7.84" summary="Nmap done at Tue Jul 21 18:25:09 2020; 1 IP address (1 host up) scanned in 7.84 seconds" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

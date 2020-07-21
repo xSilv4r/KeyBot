@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.80 scan initiated Tue Jul 21 18:30:42 2020 as: nmap -sV -p 995,993, -open -Pn -n -T4 -oX output/recon_output/196.201.197.60 196.201.197.60 -->
+<nmaprun scanner="nmap" args="nmap -sV -p 995,993, -open -Pn -n -T4 -oX output/recon_output/196.201.197.60 196.201.197.60" start="1595349042" startstr="Tue Jul 21 18:30:42 2020" version="7.80" xmloutputversion="1.04">
+<scaninfo type="syn" protocol="tcp" numservices="2" services="993,995"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1595349042" endtime="1595349057"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="196.201.197.60" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="993"><state state="open" reason="syn-ack" reason_ttl="111"/><service name="imaps" tunnel="ssl" method="table" conf="3"/></port>
+<port protocol="tcp" portid="995"><state state="open" reason="syn-ack" reason_ttl="111"/><service name="pop3s" tunnel="ssl" method="table" conf="3"/></port>
+</ports>
+<times srtt="122204" rttvar="92071" to="490488"/>
+</host>
+<runstats><finished time="1595349057" timestr="Tue Jul 21 18:30:57 2020" elapsed="15.18" summary="Nmap done at Tue Jul 21 18:30:57 2020; 1 IP address (1 host up) scanned in 15.18 seconds" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.80 scan initiated Tue Jul 21 18:26:02 2020 as: nmap -sV -p 80, -open -Pn -n -T4 -oX output/recon_output/196.201.197.58 196.201.197.58 -->
+<nmaprun scanner="nmap" args="nmap -sV -p 80, -open -Pn -n -T4 -oX output/recon_output/196.201.197.58 196.201.197.58" start="1595348762" startstr="Tue Jul 21 18:26:02 2020" version="7.80" xmloutputversion="1.04">
+<scaninfo type="syn" protocol="tcp" numservices="1" services="80"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1595348762" endtime="1595348911"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="196.201.197.58" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="49"/><service name="http" servicefp="SF-Port80-TCP:V=7.80%I=7%D=7/21%Time=5F171721%P=x86_64-pc-linux-gnu%r(GetRequest,208,&quot;HTTP/1\.0\x20301\x20Moved\x20Permanently\r\nDate:\x20Tue,\x2021\x20Jul\x202020\x2020:02:25\x20GMT\r\nCache-Control:\x20max-age=5184000\r\nExpires:\x20Sat,\x2001\x20Aug\x202020\x2002:59:39\x20GMT\r\nContent-Length:\x20269\r\nContent-Type:\x20text/html\r\nConnection:\x20close\r\nLocation:\x20https://SRX240-DJB2/dynamic-vpn\r\n\r\n&lt;!DOCTYPE\x20html&gt;\r\n&lt;html&gt;&lt;head&gt;&lt;title&gt;Moved\x20Permanently&lt;/title&gt;&lt;/head&gt;\r\n&lt;body&gt;&lt;h1&gt;Moved\x20Permanently&lt;/h1&gt;\r\n&lt;p&gt;The\x20document\x20has\x20moved\x20&lt;a\x20href=\&quot;https://SRX240-DJB2/dynamic-vpn\&quot;&gt;here&lt;/a&gt;\.&lt;/p&gt;\r\n&lt;address&gt;Embedthis-Appweb/3\.2\.3\x20at\x20SRX240-DJB2\x20Port\x2080&lt;/address&gt;&lt;/body&gt;\r\n&lt;/html&gt;\r\n&quot;)%r(FourOhFourRequest,1D8,&quot;HTTP/1\.0\x20302\x20Moved\x20Temporarily\r\nDate:\x20Tue,\x2021\x20Jul\x202020\x2020:02:31\x20GMT\r\nCache-Control:\x20no-cache\r\nContent-Length:\x20281\r\nConnection:\x20close\r\nLocation:\x20http://SRX240-DJB2/servererror\.php\?code=404\r\n\r\n&lt;!DOCTYPE\x20html&gt;\r\n&lt;html&gt;&lt;head&gt;&lt;title&gt;Moved\x20Temporarily&lt;/title&gt;&lt;/head&gt;\r\n&lt;body&gt;&lt;h1&gt;Moved\x20Temporarily&lt;/h1&gt;\r\n&lt;p&gt;The\x20document\x20has\x20moved\x20&lt;a\x20href=\&quot;http://SRX240-DJB2/servererror\.php\?code=404\&quot;&gt;here&lt;/a&gt;\.&lt;/p&gt;\r\n&lt;address&gt;Embedthis-Appweb/3\.2\.3\x20at\x20SRX240-DJB2\x20Port\x2080&lt;/address&gt;&lt;/body&gt;\r\n&lt;/html&gt;\r\n&quot;);" method="probed" conf="10"/></port>
+</ports>
+<times srtt="124181" rttvar="124181" to="620905"/>
+</host>
+<runstats><finished time="1595348911" timestr="Tue Jul 21 18:28:31 2020" elapsed="149.77" summary="Nmap done at Tue Jul 21 18:28:31 2020; 1 IP address (1 host up) scanned in 149.77 seconds" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

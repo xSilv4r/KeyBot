@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.80 scan initiated Tue Jul 21 18:30:22 2020 as: nmap -sV -p 139, -open -Pn -n -T4 -oX output/recon_output/196.201.197.91 196.201.197.91 -->
+<nmaprun scanner="nmap" args="nmap -sV -p 139, -open -Pn -n -T4 -oX output/recon_output/196.201.197.91 196.201.197.91" start="1595349022" startstr="Tue Jul 21 18:30:22 2020" version="7.80" xmloutputversion="1.04">
+<scaninfo type="syn" protocol="tcp" numservices="1" services="139"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1595349022" endtime="1595349029"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="196.201.197.91" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="139"><state state="open" reason="syn-ack" reason_ttl="113"/><service name="netbios-ssn" product="Microsoft Windows netbios-ssn" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+</ports>
+<times srtt="121504" rttvar="121504" to="607520"/>
+</host>
+<runstats><finished time="1595349029" timestr="Tue Jul 21 18:30:29 2020" elapsed="7.12" summary="Nmap done at Tue Jul 21 18:30:29 2020; 1 IP address (1 host up) scanned in 7.12 seconds" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

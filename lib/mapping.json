@@ -1,6 +1,4 @@
 {
-    "shay":"CVE-WINDOWS",
-    "shay2":"CVE2019",
-    "shay3": "CVE-WINDOWS",
-    "shay4": "CVE-WINDOWS"
+    "ms-wbt-server":"CVE-2019-0708",
+    "msrpc Microsoft Windows RPC":"CVE-2017-0143"
 }

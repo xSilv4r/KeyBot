@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.80 scan initiated Tue Jul 21 18:29:12 2020 as: nmap -sV -p 53,135, -open -Pn -n -T4 -oX output/recon_output/196.201.197.12 196.201.197.12 -->
+<nmaprun scanner="nmap" args="nmap -sV -p 53,135, -open -Pn -n -T4 -oX output/recon_output/196.201.197.12 196.201.197.12" start="1595348952" startstr="Tue Jul 21 18:29:12 2020" version="7.80" xmloutputversion="1.04">
+<scaninfo type="syn" protocol="tcp" numservices="2" services="53,135"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1595348952" endtime="1595348959"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="196.201.197.12" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="53"><state state="open" reason="syn-ack" reason_ttl="113"/><service name="domain" product="Microsoft DNS" version="6.1.7601 (1DB15B4F)" extrainfo="Windows Server 2008 R2 SP1" ostype="Windows" method="probed" conf="10"><cpe>cpe:/a:microsoft:dns</cpe><cpe>cpe:/o:microsoft:windows_server_2008:r2:sp1</cpe></service></port>
+<port protocol="tcp" portid="135"><state state="open" reason="syn-ack" reason_ttl="113"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+</ports>
+<times srtt="124908" rttvar="94129" to="501424"/>
+</host>
+<runstats><finished time="1595348959" timestr="Tue Jul 21 18:29:19 2020" elapsed="7.17" summary="Nmap done at Tue Jul 21 18:29:19 2020; 1 IP address (1 host up) scanned in 7.17 seconds" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

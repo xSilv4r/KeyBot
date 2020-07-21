@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.80 scan initiated Mon Jul 20 14:46:45 2020 as: nmap -sV -p 443,993,25, -open -Pn -n -T4 -oX output/recon_output/197.241.36.36 197.241.36.36 -->
+<nmaprun scanner="nmap" args="nmap -sV -p 443,993,25, -open -Pn -n -T4 -oX output/recon_output/197.241.36.36 197.241.36.36" start="1595249205" startstr="Mon Jul 20 14:46:45 2020" version="7.80" xmloutputversion="1.04">
+<scaninfo type="syn" protocol="tcp" numservices="3" services="25,443,993"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1595249206" endtime="1595249222"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="197.241.36.36" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="25"><state state="open" reason="syn-ack" reason_ttl="45"/><service name="smtp" product="Postfix smtpd" hostname="-webmail.ansie.dj" method="probed" conf="10"><cpe>cpe:/a:postfix:postfix</cpe></service></port>
+<port protocol="tcp" portid="443"><state state="open" reason="syn-ack" reason_ttl="45"/><service name="http" product="nginx" tunnel="ssl" method="probed" conf="10"><cpe>cpe:/a:igor_sysoev:nginx</cpe></service></port>
+<port protocol="tcp" portid="993"><state state="open" reason="syn-ack" reason_ttl="45"/><service name="imap-proxy" product="Zimbra imapd" tunnel="ssl" method="probed" conf="10"/></port>
+</ports>
+<times srtt="125794" rttvar="71917" to="413462"/>
+</host>
+<runstats><finished time="1595249222" timestr="Mon Jul 20 14:47:02 2020" elapsed="16.44" summary="Nmap done at Mon Jul 20 14:47:02 2020; 1 IP address (1 host up) scanned in 16.44 seconds" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

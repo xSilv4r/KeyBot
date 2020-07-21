@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.80 scan initiated Tue Jul 21 18:23:42 2020 as: nmap -sV -p 53, -open -Pn -n -T4 -oX output/recon_output/196.201.196.40 196.201.196.40 -->
+<nmaprun scanner="nmap" args="nmap -sV -p 53, -open -Pn -n -T4 -oX output/recon_output/196.201.196.40 196.201.196.40" start="1595348622" startstr="Tue Jul 21 18:23:42 2020" version="7.80" xmloutputversion="1.04">
+<scaninfo type="syn" protocol="tcp" numservices="1" services="53"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1595348622" endtime="1595348638"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="196.201.196.40" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="53"><state state="open" reason="syn-ack" reason_ttl="51"/><service name="domain" extrainfo="unknown banner: Not Disclosed" servicefp="SF-Port53-TCP:V=7.80%I=7%D=7/21%Time=5F171699%P=x86_64-pc-linux-gnu%r(DNSVersionBindReqTCP,48,&quot;\0F\0\x06\x85\0\0\x01\0\x01\0\x01\0\0\x07version\x04bind\0\0\x10\0\x03\xc0\x0c\0\x10\0\x03\0\0\0\0\0\x0e\rNot\x20Disclosed\xc0\x0c\0\x02\0\x03\0\0\0\0\0\x02\xc0\x0c&quot;);" method="probed" conf="10"/></port>
+</ports>
+<times srtt="120664" rttvar="120664" to="603320"/>
+</host>
+<runstats><finished time="1595348638" timestr="Tue Jul 21 18:23:58 2020" elapsed="16.86" summary="Nmap done at Tue Jul 21 18:23:58 2020; 1 IP address (1 host up) scanned in 16.86 seconds" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

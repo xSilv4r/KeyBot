@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.80 scan initiated Tue Jul 21 18:24:52 2020 as: nmap -sV -p 22, -open -Pn -n -T4 -oX output/recon_output/196.201.198.220 196.201.198.220 -->
+<nmaprun scanner="nmap" args="nmap -sV -p 22, -open -Pn -n -T4 -oX output/recon_output/196.201.198.220 196.201.198.220" start="1595348692" startstr="Tue Jul 21 18:24:52 2020" version="7.80" xmloutputversion="1.04">
+<scaninfo type="syn" protocol="tcp" numservices="1" services="22"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1595348692" endtime="1595348704"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="196.201.198.220" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="48"/><service name="ssh" product="OpenSSH" version="4.3" extrainfo="protocol 2.0" method="probed" conf="10"><cpe>cpe:/a:openbsd:openssh:4.3</cpe></service></port>
+</ports>
+<times srtt="124787" rttvar="124787" to="623935"/>
+</host>
+<runstats><finished time="1595348704" timestr="Tue Jul 21 18:25:04 2020" elapsed="12.01" summary="Nmap done at Tue Jul 21 18:25:04 2020; 1 IP address (1 host up) scanned in 12.01 seconds" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

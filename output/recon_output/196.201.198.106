@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.80 scan initiated Tue Jul 21 00:50:41 2020 as: nmap -sV -p 443, -open -Pn -n -T4 -oX output/recon_output/196.201.198.106 196.201.198.106 -->
+<nmaprun scanner="nmap" args="nmap -sV -p 443, -open -Pn -n -T4 -oX output/recon_output/196.201.198.106 196.201.198.106" start="1595285441" startstr="Tue Jul 21 00:50:41 2020" version="7.80" xmloutputversion="1.04">
+<scaninfo type="syn" protocol="tcp" numservices="1" services="443"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1595285441" endtime="1595285457"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="196.201.198.106" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="443"><state state="open" reason="syn-ack" reason_ttl="240"/><service name="http" product="Cisco ASA SSL VPN" tunnel="ssl" method="probed" conf="10"/></port>
+</ports>
+<times srtt="163311" rttvar="163311" to="816555"/>
+</host>
+<runstats><finished time="1595285457" timestr="Tue Jul 21 00:50:57 2020" elapsed="16.32" summary="Nmap done at Tue Jul 21 00:50:57 2020; 1 IP address (1 host up) scanned in 16.32 seconds" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

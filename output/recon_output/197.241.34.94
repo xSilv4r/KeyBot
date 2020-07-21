@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.80 scan initiated Mon Jul 20 14:52:26 2020 as: nmap -sV -p 1723,21,53,443,22, -open -Pn -n -T4 -oX output/recon_output/197.241.34.94 197.241.34.94 -->
+<nmaprun scanner="nmap" args="nmap -sV -p 1723,21,53,443,22, -open -Pn -n -T4 -oX output/recon_output/197.241.34.94 197.241.34.94" start="1595249546" startstr="Mon Jul 20 14:52:26 2020" version="7.80" xmloutputversion="1.04">
+<scaninfo type="syn" protocol="tcp" numservices="5" services="21-22,53,443,1723"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1595249546" endtime="1595249609"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="197.241.34.94" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="21"><state state="open" reason="syn-ack" reason_ttl="46"/><service name="ftp" product="MikroTik router ftpd" version="6.46.4" hostname="AP_Hommes" devicetype="router" method="probed" conf="10"/></port>
+<port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="46"/><service name="ssh" product="MikroTik RouterOS sshd" extrainfo="protocol 2.0" ostype="Linux" devicetype="router" method="probed" conf="10"><cpe>cpe:/o:mikrotik:routeros</cpe></service></port>
+<port protocol="tcp" portid="53"><state state="open" reason="syn-ack" reason_ttl="46"/><service name="domain" extrainfo="generic dns response: NOTIMP" servicefp="SF-Port53-TCP:V=7.80%I=7%D=7/20%Time=5F159396%P=x86_64-pc-linux-gnu%r(DNSVersionBindReqTCP,E,&quot;\0\x0c\0\x06\x81\x84\0\0\0\0\0\0\0\0&quot;)%r(DNSStatusRequestTCP,E,&quot;\0\x0c\0\0\x90\x84\0\0\0\0\0\0\0\0&quot;);" method="probed" conf="10"/></port>
+<port protocol="tcp" portid="443"><state state="open" reason="syn-ack" reason_ttl="46"/><service name="https" tunnel="ssl" method="table" conf="3"/></port>
+<port protocol="tcp" portid="1723"><state state="open" reason="syn-ack" reason_ttl="46"/><service name="pptp" product="MikroTik" version="(Firmware: 1)" hostname="AP_Hommes" method="probed" conf="10"/></port>
+</ports>
+<times srtt="213046" rttvar="67889" to="484602"/>
+</host>
+<runstats><finished time="1595249609" timestr="Mon Jul 20 14:53:29 2020" elapsed="62.93" summary="Nmap done at Mon Jul 20 14:53:29 2020; 1 IP address (1 host up) scanned in 62.93 seconds" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

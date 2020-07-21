@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.80 scan initiated Mon Jul 20 15:05:57 2020 as: nmap -sV -p 80, -open -Pn -n -T4 -oX output/recon_output/197.241.34.18 197.241.34.18 -->
+<nmaprun scanner="nmap" args="nmap -sV -p 80, -open -Pn -n -T4 -oX output/recon_output/197.241.34.18 197.241.34.18" start="1595250357" startstr="Mon Jul 20 15:05:57 2020" version="7.80" xmloutputversion="1.04">
+<scaninfo type="syn" protocol="tcp" numservices="1" services="80"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1595250357" endtime="1595250369"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="197.241.34.18" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="238"/><service name="http" product="Cisco IOS http config" ostype="IOS" method="probed" conf="10"><cpe>cpe:/o:cisco:ios</cpe></service></port>
+</ports>
+<times srtt="123177" rttvar="123177" to="615885"/>
+</host>
+<runstats><finished time="1595250369" timestr="Mon Jul 20 15:06:09 2020" elapsed="11.98" summary="Nmap done at Mon Jul 20 15:06:09 2020; 1 IP address (1 host up) scanned in 11.98 seconds" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

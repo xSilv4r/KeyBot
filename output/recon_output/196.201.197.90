@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.80 scan initiated Tue Jul 21 18:30:32 2020 as: nmap -sV -p 25,80, -open -Pn -n -T4 -oX output/recon_output/196.201.197.90 196.201.197.90 -->
+<nmaprun scanner="nmap" args="nmap -sV -p 25,80, -open -Pn -n -T4 -oX output/recon_output/196.201.197.90 196.201.197.90" start="1595349032" startstr="Tue Jul 21 18:30:32 2020" version="7.80" xmloutputversion="1.04">
+<scaninfo type="syn" protocol="tcp" numservices="2" services="25,80"/>

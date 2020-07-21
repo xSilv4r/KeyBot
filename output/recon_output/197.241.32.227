@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.80 scan initiated Mon Jul 20 14:48:25 2020 as: nmap -sV -p 443, -open -Pn -n -T4 -oX output/recon_output/197.241.32.227 197.241.32.227 -->
+<nmaprun scanner="nmap" args="nmap -sV -p 443, -open -Pn -n -T4 -oX output/recon_output/197.241.32.227 197.241.32.227" start="1595249305" startstr="Mon Jul 20 14:48:25 2020" version="7.80" xmloutputversion="1.04">
+<scaninfo type="syn" protocol="tcp" numservices="1" services="443"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1595249306" endtime="1595249323"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="197.241.32.227" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="443"><state state="open" reason="syn-ack" reason_ttl="108"/><service name="http" product="Microsoft IIS httpd" version="8.5" ostype="Windows" tunnel="ssl" method="probed" conf="10"><cpe>cpe:/a:microsoft:iis:8.5</cpe><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+</ports>
+<times srtt="187772" rttvar="187772" to="938860"/>
+</host>
+<runstats><finished time="1595249323" timestr="Mon Jul 20 14:48:43 2020" elapsed="17.76" summary="Nmap done at Mon Jul 20 14:48:43 2020; 1 IP address (1 host up) scanned in 17.76 seconds" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

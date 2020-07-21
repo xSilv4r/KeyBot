@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.80 scan initiated Tue Jul 21 00:51:41 2020 as: nmap -sV -p 135,139,3389, -open -Pn -n -T4 -oX output/recon_output/196.201.195.107 196.201.195.107 -->
+<nmaprun scanner="nmap" args="nmap -sV -p 135,139,3389, -open -Pn -n -T4 -oX output/recon_output/196.201.195.107 196.201.195.107" start="1595285501" startstr="Tue Jul 21 00:51:41 2020" version="7.80" xmloutputversion="1.04">
+<scaninfo type="syn" protocol="tcp" numservices="3" services="135,139,3389"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1595285501" endtime="1595285585"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="196.201.195.107" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="135"><state state="open" reason="syn-ack" reason_ttl="113"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="139"><state state="open" reason="syn-ack" reason_ttl="113"/><service name="netbios-ssn" product="Microsoft Windows netbios-ssn" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="3389"><state state="open" reason="syn-ack" reason_ttl="113"/><service name="ms-wbt-server" tunnel="ssl" method="table" conf="3"/></port>
+</ports>
+<times srtt="169583" rttvar="95446" to="551367"/>
+</host>
+<runstats><finished time="1595285585" timestr="Tue Jul 21 00:53:05 2020" elapsed="84.79" summary="Nmap done at Tue Jul 21 00:53:05 2020; 1 IP address (1 host up) scanned in 84.79 seconds" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

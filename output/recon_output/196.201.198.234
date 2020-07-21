@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.80 scan initiated Tue Jul 21 00:48:31 2020 as: nmap -sV -p 443, -open -Pn -n -T4 -oX output/recon_output/196.201.198.234 196.201.198.234 -->
+<nmaprun scanner="nmap" args="nmap -sV -p 443, -open -Pn -n -T4 -oX output/recon_output/196.201.198.234 196.201.198.234" start="1595285311" startstr="Tue Jul 21 00:48:31 2020" version="7.80" xmloutputversion="1.04">
+<scaninfo type="syn" protocol="tcp" numservices="1" services="443"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1595285311" endtime="1595285326"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="196.201.198.234" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="443"><state state="open" reason="syn-ack" reason_ttl="240"/><service name="http" product="Connectra Check Point Web Security httpd" devicetype="security-misc" tunnel="ssl" method="probed" conf="10"><cpe>cpe:/a:checkpoint:connectra</cpe></service></port>
+</ports>
+<times srtt="222745" rttvar="222745" to="1113725"/>
+</host>
+<runstats><finished time="1595285326" timestr="Tue Jul 21 00:48:46 2020" elapsed="15.88" summary="Nmap done at Tue Jul 21 00:48:46 2020; 1 IP address (1 host up) scanned in 15.88 seconds" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

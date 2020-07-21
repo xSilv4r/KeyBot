@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.80 scan initiated Tue Jul 21 18:28:32 2020 as: nmap -sV -p 443,22, -open -Pn -n -T4 -oX output/recon_output/196.201.192.209 196.201.192.209 -->
+<nmaprun scanner="nmap" args="nmap -sV -p 443,22, -open -Pn -n -T4 -oX output/recon_output/196.201.192.209 196.201.192.209" start="1595348912" startstr="Tue Jul 21 18:28:32 2020" version="7.80" xmloutputversion="1.04">
+<scaninfo type="syn" protocol="tcp" numservices="2" services="22,443"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1595348912" endtime="1595348932"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="196.201.192.209" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="241"/><service name="ssh" product="Cisco SSH" version="1.25" extrainfo="protocol 1.99" ostype="IOS" method="probed" conf="10"><cpe>cpe:/a:cisco:ssh:1.25</cpe><cpe>cpe:/o:cisco:ios</cpe></service></port>
+<port protocol="tcp" portid="443"><state state="open" reason="syn-ack" reason_ttl="241"/><service name="https" tunnel="ssl" method="table" conf="3"/></port>
+</ports>
+<times srtt="122414" rttvar="91933" to="490146"/>
+</host>
+<runstats><finished time="1595348932" timestr="Tue Jul 21 18:28:52 2020" elapsed="20.03" summary="Nmap done at Tue Jul 21 18:28:52 2020; 1 IP address (1 host up) scanned in 20.03 seconds" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

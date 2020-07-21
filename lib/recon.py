@@ -29,7 +29,7 @@ def get_running_processes():
     return running_processes
 
 def version_detection(output_filename):
-    max_concurrent_scans = 2
+    max_concurrent_scans = 4
     running_scans = 0
     # proc = subprocess.run(
     # args = ["/bin/bash", "./lib/bash.sh", "{}.json".format(output_filename)],
